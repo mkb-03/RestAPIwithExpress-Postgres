@@ -1,0 +1,2 @@
+1: connect to postgres using password
+2: 
