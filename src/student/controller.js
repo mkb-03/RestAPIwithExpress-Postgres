@@ -41,8 +41,21 @@ const addStudent = (req, res) => {
     })
 }
 
+const removeStudent = (req, res) =>{
+    const id = parseInt(req.params.id)
+
+    pool.query(queries.removeStudent, [id] , (error, result)=>{
+        const noStudent = !result.rows.length
+        if(noStudent)
+        {
+            res.send("Students does not exist")
+        }
+    })
+}
+
 module.exports = {
     getStudents,
     getStudentById,
-    addStudent
+    addStudent,
+    removeStudent,
 }
