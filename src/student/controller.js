@@ -34,7 +34,7 @@ const addStudent = (req, res) => {
     })
 
     // Add student to database
-    pool.query(queries.addStudent, [name, email, age, dob], (res, result) =>{
+    pool.query(queries.addStudent, [name, email, age, dob], (error, result) =>{
         if(error) throw error;
         res.status(201).send("Student added successfully")
         console.log("Student Created")

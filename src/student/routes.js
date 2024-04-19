@@ -4,8 +4,8 @@ const router = Router()
 
 
 router.get('/' , controller.getStudents);
+router.post("/", controller.addStudent);
 router.get('/:id' , controller.getStudentById);
-router.post("/", controller.addStudent)
 
 module.exports = router;
 

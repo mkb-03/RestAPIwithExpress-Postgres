@@ -1,6 +1,7 @@
 1: connect to postgres using password
 2: Create database -> " CREATE DATABASE db_name"
-3: Make connection 
+3: Make connection -> \conninfo
+4: connect to database -> \c database_name
 4: CREATE TABLE students (
  ID serial PRIMARY KEY,
  name VARCHAR(255),
