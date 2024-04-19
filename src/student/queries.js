@@ -8,5 +8,6 @@ module.exports = {
     getStudents,
     getStudentById,
     checkEmailExists,
-    addStudent 
+    addStudent,
+    removeStudent 
 }

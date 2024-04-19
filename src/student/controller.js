@@ -44,12 +44,17 @@ const addStudent = (req, res) => {
 const removeStudent = (req, res) =>{
     const id = parseInt(req.params.id)
 
-    pool.query(queries.removeStudent, [id] , (error, result)=>{
+    pool.query(queries.getStudentById, [id] , (error, result)=>{
         const noStudent = !result.rows.length
         if(noStudent)
         {
             res.send("Students does not exist")
         }
+    })
+
+    pool.query(queries.removeStudent, [id], (error, result)=>{
+        if(error) throw error;
+        res.status(200).send("Student removed successfully")
     })
 }
 
